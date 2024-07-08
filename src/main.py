@@ -11,7 +11,6 @@ def read_and_classify_file(file_path):
     with open(absolute_path, 'r') as file:
         content = file.read()
 
-        # Regular expression to split text into tokens
         token_pattern = re.compile(r'\w+|[^\w\s]')
         tokens = token_pattern.findall(content)
 
@@ -19,8 +18,8 @@ def read_and_classify_file(file_path):
             print(f"{token}: {classify_token(token)}")
 
 if __name__ == "__main__":
-    # Create DFA image
+    # Creates The DFA Image
     create_dfa_image()
 
-    # Read and classify tokens from example file
+    # Reads and Classifies Tokens From The Input File
     read_and_classify_file('./input/example.txt')
